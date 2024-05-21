@@ -9,11 +9,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
+//Servidor escuchando en el puerto 3000
+
 app.listen(3000, () => {
     console.log("Servidor escuchando en http://localhost:3000")
 });
 
+
+//Establezco assets como publica
+
 app.use('/assets', e.static(path.join(__dirname, 'assets')));
+
+//Mensaje generico en la ruta principal
 
 app.get("/", (req, res) => {
     res.send("Ruta principal");
